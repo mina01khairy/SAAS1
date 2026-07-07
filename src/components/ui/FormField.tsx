@@ -1,10 +1,10 @@
 "use client";
 
-import { InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from "react";
-import { useField } from "formik";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import clsx from "@/lib/clsx";
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useField } from "formik";
+import { InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from "react";
 
 interface BaseProps {
   label?: string;
@@ -56,7 +56,7 @@ export function TextField({
           className={clsx(
             "block w-full py-3 bg-surface-container-lowest border rounded-lg font-body-md text-on-surface placeholder:text-outline/60 focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all duration-200 outline-none",
             icon ? "pl-10 pr-4" : "px-4",
-            rightSlot && "pr-10",
+            rightSlot ? "pr-10" : undefined,
             hasError
               ? "border-error focus:border-error focus:ring-error/10"
               : "border-outline-variant/40",
